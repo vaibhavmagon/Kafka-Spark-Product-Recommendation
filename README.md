@@ -1,8 +1,8 @@
 # Kafka & Spark Product Recommendation Engine With Data
 
-Python script with spark streaming to get product Id from one kafka producer, find relevant products via spark streaming and publish to another topic (kafka consumer).
+This code is to demostrate spark streaming and kafka implementation using a real life e-commerce website product recommendation example. For any (as in data dir) specific item_id we get best recommended items.
 
-**Disclaimer**: This code is to demostrate spark streaming and kafka implementation using real life product recommendation example. This is not the best tutorial for learning and implementing Recommendation engine. Though I have used item-based collaborative filtering built using python and no machine learning libraries for this tutorial.
+**Disclaimer**: This is not the best tutorial for learning and implementing Recommendation engine. Though I have used item-based collaborative filtering built using python and no machine learning libraries for this tutorial.
 
 
 ## Data Files (Random e-commerce data for the script)

@@ -21,6 +21,7 @@ This code is to demostrate spark streaming and kafka implementation using a real
 
 
 ## How to run?
+All these commands (except for Registry of topics) go in seperate console windows on the terminal.
 
 - **Zookeeper**: zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties <br/>
 (Zoopkeeper is the broker that helps coordinate the show)
@@ -29,10 +30,10 @@ This code is to demostrate spark streaming and kafka implementation using a real
 (Kafka server syncs data flow between Producer and Consumers)
 
 - **Register 1st Topic**: kafka-topics --create --zookeeper localhost:2181 --topic idpushtopic --partitions 1 --replication-factor 1 <br/>
-(idpushtopic is the topic to get an Id of product for recommendations)
+(idpushtopic is the topic to get an Id of product for recommendations. To be run once only.)
 
 - **Register 2nd Topic**: kafka-topics --create --zookeeper localhost:2181 --topic prodRecommSend --partitions 1 --replication-factor 1 <br/>
-(prodRecommSend is the topic to which the stream pushes the recommendations)
+(prodRecommSend is the topic to which the stream pushes the recommendations. To be run once only.)
 
 - **Producer**: kafka-console-producer --broker-list localhost:9092 --topic idpushtopic <br/>
 (Producer to be opened in one window that ultimately pushes the product id to the spark stream)
@@ -46,7 +47,7 @@ This code is to demostrate spark streaming and kafka implementation using a real
 
 ## How to test?
 
-- Start Producer 1 and push an Id: 19444 (to test) <br/>
+- Start Producer in one window and push an item id: 19444 (to test) <br/>
 
 <img src="https://i.ibb.co/4wbKR14/Screenshot-2020-09-19-at-2-25-03-AM.png" alt="Screenshot-2020-09-19-at-2-25-03-AM" border="0">
 
@@ -54,7 +55,7 @@ This code is to demostrate spark streaming and kafka implementation using a real
 
 <img src="https://i.ibb.co/Rpr4XwD/Screenshot-2020-09-19-at-2-23-38-AM.png" alt="Screenshot-2020-09-19-at-2-23-38-AM" border="0">
 
-- You'd get the data in the consumer window <br/>
+- Simultaneously you'd get the data in the consumer window <br/>
 
 <img src="https://i.ibb.co/Qrck5ts/Screenshot-2020-09-19-at-2-21-15-AM.png" alt="Screenshot-2020-09-19-at-2-21-15-AM" border="0">
 

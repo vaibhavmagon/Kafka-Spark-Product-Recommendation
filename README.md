@@ -3,10 +3,10 @@
 Python script with spark streaming to get product Id from one kafka producer, find relevant products via spark streaming and publish to another topic (kafka consumer).
 
 
-## Data Files (Random data for the script)
+## Data Files (Random e-commerce data for the script)
 
-- item-data.csv - Has Item Id and Name (~3,500 entries)
-- user-item.csv - User:Item Id mapped on timestamp for matrix for collaborative filtering (~10,000 entries)
+- item-data.csv - Item Id and Item Name (~3,500 entries)
+- user-item.csv - User Id & Item Id mapped to timestamp for matrix for collaborative filtering (~10,000 entries)
 
 
 ## Dependencies

@@ -1,4 +1,6 @@
-# Kafka & Spark Streaming Product Recommendation Engine
+# Kafka & Spark Streaming Product Recommendation Engine 
+
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Kafka%20spark%20streaming%20product%20recommendation%20enginer%20code%20on%20Python%204&url=https://github.com/vaibhavmagon/Kafka-Spark-Product-Recommendation&via=vaibhavmagon&hashtags=python,kafka,spark,spark-streaming,developers) <img src="https://img.shields.io/static/v1?label=Python&message=3.7&color=<COLOR>"> <img src="https://img.shields.io/static/v1?label=Spark&message=2.4&color=<COLOR>">
 
 This code is to demonstrate spark streaming and kafka implementation using a real life e-commerce website product recommendation example. For any (as in data dir) specific item_id we get best recommended items.
 

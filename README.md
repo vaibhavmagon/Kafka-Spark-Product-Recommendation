@@ -1,6 +1,6 @@
 # Kafka & Spark Streaming Product Recommendation Engine 
 
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Kafka%20spark%20streaming%20product%20recommendation%20engine%20code%20on%20Python%20at&url=https://github.com/vaibhavmagon/Kafka-Spark-Product-Recommendation&via=vaibhavmagon&hashtags=python,kafka,spark,spark-streaming,developers) <img src="https://img.shields.io/static/v1?label=Python&message=3.7&color=<COLOR>"> <img src="https://img.shields.io/static/v1?label=Spark&message=2.4&color=<COLOR>">
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Kafka%20spark%20streaming%20product%20recommendation%20engine%20code%20on%20Python%20at&url=https://github.com/vaibhavmagon/Kafka-Spark-Product-Recommendation&via=vaibhavmagon&hashtags=python,kafka,spark,spark-streaming,developers) <img src="https://img.shields.io/static/v1?label=Python&message=3.7&color=<COLOR>"> <img src="https://img.shields.io/static/v1?label=Spark&message=2.4&color=<COLOR>"> <img src="https://img.shields.io/static/v1?label=Build&message=Passing&color=<COLOR>">
 
 This code is to demonstrate spark streaming and kafka implementation using a real life e-commerce website product recommendation example. For any (as in data dir) specific item_id we get best recommended items.
 
@@ -62,3 +62,6 @@ All these commands (except for Registry of topics) go in seperate console window
 <img src="https://i.ibb.co/Qrck5ts/Screenshot-2020-09-19-at-2-21-15-AM.png" alt="Screenshot-2020-09-19-at-2-21-15-AM" border="0">
 
 
+## Maintainer
+
+- Vaibhav Magon

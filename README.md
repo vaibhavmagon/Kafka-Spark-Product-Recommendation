@@ -65,3 +65,7 @@ All these commands (except for Registry of topics) go in seperate console window
 ## Maintainer
 
 - Vaibhav Magon
+
+## Support
+
+[![Buy Me Chai](https://i.ibb.co/Xkdj83y/image-2.png)](https://buymechai.ml/link.html?vpa=vaibhav210991@okaxis&nm=Vaibhav&amt=10)

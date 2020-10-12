@@ -99,7 +99,7 @@ def runAlgorithm(message):
         # Sort by quality score.
         results = filteredResults.map(lambda pairSim: (pairSim[1], pairSim[0])).sortByKey(ascending=False).take(10)
 
-        print("Top similar products for - " + nameDict[productId])
+        print("Top similar products for: " + nameDict[productId])
         for result in results:
             (sim, pair) = result
             similarProductId = pair[0]
@@ -109,6 +109,8 @@ def runAlgorithm(message):
                 print(nameDict[similarProductId] + " | " + str(similarProductId))
                 producer.send('prodRecommSend', bytes(nameDict[similarProductId], 'utf-8'))
                 producer.flush()
+            else:
+                print('No similar products found!')
 
 
 def main():

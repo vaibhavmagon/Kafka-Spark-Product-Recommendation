@@ -7,10 +7,17 @@ This code is to demonstrate spark streaming and kafka implementation using a rea
 **Disclaimer**: This is not the best tutorial for learning and implementing Recommendation engine. Though I have used item-based collaborative filtering built using python and no machine learning libraries for this tutorial.
 
 
-## Data Files (Random e-commerce data for the script)
+## Data Files
 
-- item-data.csv - Item Id and Item Name (~3,500 entries)
-- user-item.csv - User Id & Item Id mapped to timestamp for matrix for collaborative filtering (~10,000 entries)
+- Create a /data folder with below two files.
+- item-data.csv - Item Id and Item Name
+```console
+19444 | Radhe gold aata 25 kg
+```
+- user-item.csv - User Id & Item Id mapped to timestamp for matrix for collaborative filtering
+```console
+49721 | 19853 | 2020-09-18T20:02:20+05:30
+```
 
 
 ## Dependencies

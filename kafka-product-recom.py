@@ -107,7 +107,7 @@ def runAlgorithm(message):
                 similarProductId = pair[1]
             if similarProductId in nameDict:
                 print(nameDict[similarProductId] + " | " + str(similarProductId))
-                producer.send('prodRecommSend', bytes(nameDict[similarProductId], 'utf-8'))
+                producer.send('prodRecommSend', bytes(nameDict[similarProductId]))
                 producer.flush()
             else:
                 print('No similar products found!')

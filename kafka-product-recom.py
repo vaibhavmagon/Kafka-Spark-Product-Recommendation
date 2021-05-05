@@ -7,10 +7,10 @@ from math import sqrt
 from kafka import KafkaProducer
 
 sc = SparkContext(appName="PythonStreamingKafkaProduct")
+sc.setLogLevel("ERROR") # Removing INFO logs.
 ssc = StreamingContext(sc, 1)
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
-
 
 def runAlgorithm(message):
     def loadItemNames():
@@ -86,8 +86,9 @@ def runAlgorithm(message):
     coOccurenceThreshold = 20
 
     records = message.collect()
+    responseObj = {}
     if len(records) > 0:
-        productId = int(records[0])
+        productId = int(records[0]) # Here we get the productId
 
         # Filter for products with this sim that are "good" as defined by
         # our quality thresholds above
@@ -99,18 +100,21 @@ def runAlgorithm(message):
         # Sort by quality score.
         results = filteredResults.map(lambda pairSim: (pairSim[1], pairSim[0])).sortByKey(ascending=False).take(10)
 
-        print("Top similar products for: " + nameDict[productId])
-        for result in results:
-            (sim, pair) = result
-            similarProductId = pair[0]
-            if similarProductId == productId:
-                similarProductId = pair[1]
-            if similarProductId in nameDict:
-                print(nameDict[similarProductId] + " | " + str(similarProductId))
-                producer.send('prodRecommSend', bytes(nameDict[similarProductId]))
-                producer.flush()
-            else:
-                print('No similar products found!')
+        if productId in nameDict:
+            print("Top similar products for: " + nameDict[productId])
+            for result in results:
+                (sim, pair) = result
+                similarProductId = pair[0]
+                if similarProductId == productId:
+                    similarProductId = pair[1]
+                if similarProductId in nameDict:
+                    print(nameDict[similarProductId] + " | " + str(similarProductId))
+                    responseObj[similarProductId] = nameDict[similarProductId]
+                else:
+                    print('No similar products found!')
+
+        producer.send('prodRecommSend', bytes(responseObj))
+        producer.flush()
 
 
 def main():
@@ -121,7 +125,7 @@ def main():
     zkQuorum, topic = sys.argv[1:]
     kvs = KafkaUtils.createStream(ssc, zkQuorum, "spark-streaming-consumer", {topic: 1})
     lines = kvs.map(lambda x: x[1])
-    lines.pprint()
+    #lines.pprint() # To print the status and time.
     lines.foreachRDD(runAlgorithm)
 
     ssc.start()
